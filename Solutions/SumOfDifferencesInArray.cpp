@@ -16,11 +16,18 @@ using namespace std;
 // has only one element the result should be 0 
 // (Nothing in Haskell, None in Rust).
 
-int sumOfDifferences(const std::vector<int>& arr){
-  //your code here
+int sumOfDifferences(const vector<int>& arr){
+    int result = 0;
+    if (arr.size() <= 1){
+        return result;
+    }
+
+    return 505;
+
 }
 
 int main()
 {
+    cout << sumOfDifferences({2});
     return 0;
 }
