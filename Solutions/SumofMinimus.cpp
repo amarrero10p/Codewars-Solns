@@ -30,6 +30,7 @@ int sum_of_minimums(const vector<vector<int>> &numbers)
 
 int main()
 {
+    // test cases
     cout << sum_of_minimums({{1,2,3}, {4,5,6}, {7,8,9}});
     return 0;
 }
