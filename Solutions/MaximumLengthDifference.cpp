@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
 using namespace std;
 
 // You are given two arrays a1 and a2 of strings. 
@@ -24,5 +25,46 @@ using namespace std;
 class MaxDiffLength
 {
 public:
-    static int mxdiflg(vector<string> &a1, vector<string> &a2);
+    int min_word_pos(vector <string> arr1)
+    {
+        int min_string = arr1[0].length(); int min_pos = 0;
+        for (int i = 0; i < arr1.size(); i++)
+        {
+            if (arr1[i].length() < min_string)
+            {
+                min_string = arr1[i].length();
+                min_pos = i;
+            }
+        }
+        return min_pos;
+    }
+
+    int max_word_pos(vector <string> arr1)
+    {
+        int max_string = arr1[0].length(); int max_pos = 0;
+        for (int i = 0; i < arr1.size(); i++)
+        {
+            if (arr1[i].length() > max_string)
+            {
+                max_string = arr1[i].length();
+                max_pos = i;
+            }
+        }
+        return max_pos;
+    }
+
+    static int mxdiflg(vector<string> a1, vector<string> a2)
+    {
+
+        return 1;
+    }
 };
+
+
+
+int main()
+{
+    MaxDiffLength test;
+    cout << test.mxdiflg({"anc", "an"}, {"abc", "ajsoa"}) << endl;
+    return 0;
+}
