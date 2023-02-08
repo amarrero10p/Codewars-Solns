@@ -1,6 +1,7 @@
 #include <vector>
 #include <iostream>
 #include <cmath>
+#include <algorithm>
 using namespace std;
 
 // Given a 2D ( nested ) list ( array, vector, .. ) of size m * n, 
@@ -18,19 +19,17 @@ using namespace std;
 
 int sum_of_minimums(const vector<vector<int>> &numbers)
 {
-    return 0;
+    int total_mins = 0;
+    for (int i = 0; i < numbers.size(); i++)
+    {
+        total_mins += *min_element(numbers[i].begin(), numbers[i].end());
+        cout << *min_element(numbers[i].begin(), numbers[i].end()) << endl;
+    }
+    return total_mins;
 }
 
 int main()
 {
-    vector <vector<int>> test = {{1,2,3}, {4,5,6}};
-    for (int i = 0; i < test.size(); i++)
-    {
-        for (int j = 0; j < test[i].size(); j++)
-        {
-            cout << test[i][j] << " ";
-        }
-        cout << endl;
-    }
+    cout << sum_of_minimums({{1,2,3}, {4,5,6}, {7,8,9}});
     return 0;
 }
