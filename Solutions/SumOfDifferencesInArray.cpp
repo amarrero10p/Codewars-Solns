@@ -1,5 +1,6 @@
 #include <vector>
 #include <iostream>
+#include <algorithm>
 using namespace std;
 
 // Your task is to sum the differences 
@@ -16,18 +17,28 @@ using namespace std;
 // has only one element the result should be 0 
 // (Nothing in Haskell, None in Rust).
 
-int sumOfDifferences(const vector<int>& arr){
+int sumOfDifferences(const vector<int>& arr)
+{
     int result = 0;
-    if (arr.size() <= 1){
+    vector <int> arr_copy = arr;
+    sort(arr_copy.rbegin(), arr_copy.rend());
+    if (arr_copy.size() <= 1){
         return result;
     }
+    for (int i = 0; i < arr_copy.size(); i++)
+    {
+        if (i + 1 == arr.size()){break;}
+        result += (arr_copy[i] - arr_copy[i + 1]);
 
-    return 505;
-
+    }
+    return result;
 }
 
 int main()
 {
-    cout << sumOfDifferences({2});
+    // test cases
+    cout << sumOfDifferences({}) << endl;
+    cout << sumOfDifferences({1}) << endl;
+    cout << sumOfDifferences({2,10,1}) << endl;
     return 0;
 }
