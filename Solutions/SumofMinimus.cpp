@@ -23,5 +23,14 @@ int sum_of_minimums(const vector<vector<int>> &numbers)
 
 int main()
 {
+    vector <vector<int>> test = {{1,2,3}, {4,5,6}};
+    for (int i = 0; i < test.size(); i++)
+    {
+        for (int j = 0; j < test[i].size(); j++)
+        {
+            cout << test[i][j] << " ";
+        }
+        cout << endl;
+    }
     return 0;
 }
