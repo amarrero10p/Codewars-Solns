@@ -6,4 +6,4 @@ Its main purpose is to help me keep developing my coding skills.
 "Developer" branch is a work in progress space where I keep developing 
 my solutions. 
 
-*Solutions without "Final Solution Commit" message are not completed or updated.
+*Solutions without a solution commit message are not completed or updated.
